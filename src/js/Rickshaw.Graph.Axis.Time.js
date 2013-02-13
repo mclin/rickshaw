@@ -53,7 +53,9 @@ Rickshaw.Graph.Axis.Time = function(args) {
 	this.render = function() {
 
 		this.elements.forEach( function(e) {
-			e.parentNode.removeChild(e);
+			if (e.parentNode) { 
+				e.parentNode.removeChild(e); 
+			}
 		} );
 
 		this.elements = [];
